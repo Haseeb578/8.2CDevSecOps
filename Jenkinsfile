@@ -20,12 +20,9 @@ pipeline {
             }
             post {
                 always {
-                    emailext(
-                        to: 'haseebgulkhan12@gmail.com',
-                        subject: 'Run Tests Stage Completed',
-                        body: 'The Run Tests stage has finished. The build log is attached.',
-                        attachLog: true
-                    )
+                    mail to: 'haseebgulkhan12@gmail.com',
+                         subject: 'Run Tests Stage Completed',
+                         body: 'The Run Tests stage has finished. Please check the Jenkins console output for logs.'
                 }
             }
         }
@@ -42,12 +39,9 @@ pipeline {
             }
             post {
                 always {
-                    emailext(
-                        to: 'haseebgulkhan12@gmail.com',
-                        subject: 'NPM Audit Security Scan Completed',
-                        body: 'The NPM Audit security scan stage has finished. The build log is attached.',
-                        attachLog: true
-                    )
+                    mail to: 'haseebgulkhan12@gmail.com',
+                         subject: 'NPM Audit Security Scan Completed',
+                         body: 'The NPM Audit security scan stage has finished. Please check the Jenkins console output for vulnerability details.'
                 }
             }
         }
